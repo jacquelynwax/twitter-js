@@ -1,6 +1,9 @@
 const express = require("express");
 const nunjucks = require('nunjucks');
 const app = express();
+const routes = require('./routes');
+
+app.use('/', routes);
 
 app.engine('html', nunjucks.render);
 app.set('view engine', 'html')
@@ -13,14 +16,18 @@ app.use(function(req, res, next) {
     next();
   })
 
-app.get('/', function(req, res, next){
-    res.render( 'index', {title: 'Hall of Fame', people: people} );
-    //res.send('<h1>Welcome to Twitter-ish</h1>')
-})
 
-app.get('/news', function(req, res, next){
-    res.send('<h1>Welcome to the news section of Twitter-ish</h1>')
-})
+
+
+
+// app.get('/', function(req, res, next){
+//     res.render( 'index', {title: 'Hall of Fame', people: people} );
+//     //res.send('<h1>Welcome to Twitter-ish</h1>')
+// })
+//
+// app.get('/news', function(req, res, next){
+//     res.send('<h1>Welcome to the news section of Twitter-ish</h1>')
+// })
 
 app.listen(3000, function(){
     console.log('server listening');
