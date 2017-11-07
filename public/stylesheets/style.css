@@ -51,9 +51,13 @@ code {
   width: 48px;
   content:url("http://lorempixel.com/48/48");
 }
+
 .content {
   margin-left: 60px;
 }
+
+
+
 .content .by {
   font-weight: bold;
 }
