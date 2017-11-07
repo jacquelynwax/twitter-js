@@ -9,11 +9,12 @@ router.get('/', function(req, res) {
   res.render('index', {tweets: tweets});
 })
 
-// router.get('/stylesheets/style.css', function(req, res){
-//   let options = {
-//     root: __dirname + '/../public/'
-//   }
-//   res.sendFile('/stylesheets/style.css',options);
-// })
+router.get('/users/:name', function(req, res) {
+  var name = req.params.name; //localHost3000/users/jacquelyn --> name = jacquelyn
+  var list = tweetBank.find( {name: name} ); // list = [jacquelyn tweets] (data)
+  res.render( 'index', { tweets: list } );  
+  //using index template inject into the tweets this objejct we just foind 'list'
+});
+
 
 module.exports = router;

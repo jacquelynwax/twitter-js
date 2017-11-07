@@ -56,7 +56,13 @@ code {
   margin-left: 60px;
 }
 
+li{
+  list-style-image: url("https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg");
+}
 
+/* #name{
+  list-style-image: url("https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg");
+} */
 
 .content .by {
   font-weight: bold;
