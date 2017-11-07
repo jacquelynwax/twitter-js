@@ -9,7 +9,7 @@ nunjucks.configure('views', {noCache: true});
 const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 
 app.use(function(req, res, next) {
-    console.log(req.method + ' ' + req.path);
+    console.log(req.method + ' ' + req.path + ' '+ res.statusCode);
     next();
   })
 
