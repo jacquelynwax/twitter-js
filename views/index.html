@@ -15,7 +15,7 @@
 
       <!-- display tweets here -->
       {% for tweet in tweets %}   <!-- (for key in obj) tweets is the obj set in the render call -->
-        <li><span>{{tweet.name}}</span><br /><span>{{tweet.content}}</span><br /><br /></li>
+        <li><span><a href='/users/{{tweet.name}}'>{{tweet.name}}</a></span><br /><span>{{tweet.content}}</span><br /><br /></li>
       {% endfor %}
 
     </div>
