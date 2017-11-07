@@ -2,23 +2,11 @@ const express = require("express");
 const nunjucks = require('nunjucks');
 const app = express();
 
-app.engine('html', nunjucks.render('index.html', locals, function (err, output) {
-    console.log(output);
-});)
-app.set()
-
-var locals = {
-    title: 'An Example',
-    people: [
-        { name: 'Gandalf'},
-        { name: 'Frodo' },
-        { name: 'Hermione'}
-    ]
-};
-
-[1, 2, 3].forEach(console.log(element);)
-
+app.engine('html', nunjucks.render);
+app.set('view engine', 'html')
 nunjucks.configure('views', {noCache: true});
+
+const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 
 app.use(function(req, res, next) {
     console.log(req.method + ' ' + req.path);
@@ -26,7 +14,8 @@ app.use(function(req, res, next) {
   })
 
 app.get('/', function(req, res, next){
-    res.send('<h1>Welcome to Twitter-ish</h1>')
+    res.render( 'index', {title: 'Hall of Fame', people: people} );
+    //res.send('<h1>Welcome to Twitter-ish</h1>')
 })
 
 app.get('/news', function(req, res, next){
